@@ -37,3 +37,4 @@ echo 'PATH=$PATH:"/home/kali/tools"' >> /etc/profile.d/stewripathmodify.sh
 echo "Install PS Help, Press Enter to continue..."
 read blaj
 pwsh -Command "Update-help -Module * -Scope AllUsers -UICulture en-us -Force"
+
