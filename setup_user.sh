@@ -9,3 +9,5 @@ $ScriptDir/donpapi.sh
 $ScriptDir/gmsadumper.sh
 $ScriptDir/krbrelayx.sh
 $ScriptDir/webclientServiceScanner.sh
+$ScriptDir/bloodhoundpy.sh
+$ScriptDir/powerview.sh
