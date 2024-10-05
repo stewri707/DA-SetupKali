@@ -11,3 +11,4 @@ $ScriptDir/krbrelayx.sh
 $ScriptDir/webclientServiceScanner.sh
 $ScriptDir/bloodhoundpy.sh
 $ScriptDir/powerview.sh
+$ScriptDir/ldaprelayscan.sh
