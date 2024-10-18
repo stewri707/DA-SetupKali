@@ -13,7 +13,7 @@ echo =========== Kali-paket ===========
 echo "Install Kali packages, Press Enter to continue..."
 read blaj
 # Kommentarer: wordlists, gcc (För blaa krb5-config -> bloodyAD), krb5-user (För blaa kvno, kinit), libkrb5-dev (För blaa bloodyAD, pywerview.py)
-apt-get install coercer gcc krb5-user libkrb5-dev libsasl2-modules-gssapi-mit python3-venv pipx pipenv systemd-timesyncd tshark mitm6
+apt-get install coercer gcc krb5-user libkrb5-dev libsasl2-modules-gssapi-mit python3-venv pipx pipenv systemd-timesyncd tshark mitm6 chntpw
 
 echo =========== Ordlistor ===========
 echo "Wordlists, Press Enter to continue..."
