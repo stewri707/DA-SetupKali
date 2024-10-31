@@ -1,3 +1,6 @@
+echo  =========== sudo su - ===========
+sudo su -
+
 echo  =========== Timezone ===========
 echo "Timezone, Press Enter to continue..."
 read blaj
