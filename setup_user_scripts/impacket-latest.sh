@@ -1,4 +1,4 @@
-echo ==================== Latest Impacket (with PKCS12 support)
+echo ==================== Latest Impacket \(with PKCS12 support\)
 echo "Bloodhoud.py Bloodhound CE Branch. Press Enter"
 read blaj
 cd $HOME/venv
