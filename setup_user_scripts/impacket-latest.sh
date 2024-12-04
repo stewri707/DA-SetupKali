@@ -1,5 +1,5 @@
 echo ==================== Latest Impacket \(with PKCS12 support\)
-echo "Bloodhoud.py Bloodhound CE Branch. Press Enter"
+echo "Latest Impacket. Press Enter"
 read blaj
 cd $HOME/venv
 git clone https://github.com/fortra/impacket.git
