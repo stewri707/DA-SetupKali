@@ -27,11 +27,11 @@ echo "Do extra commands, Press Enter to continue..."
 read blaj
 chmod +x /usr/share/doc/python3-impacket/examples/ntlmrelayx.py
 
-echo =========== PATH ===========
-echo "Change PATH, Press Enter to continue..."
-read blaj
-echo 'PATH=$PATH:"/usr/share/doc/python3-impacket/examples"' > /etc/profile.d/stewripathmodify.sh
-echo "PATH=\"\$PATH:$HOME/tools\"" >> /etc/profile.d/stewripathmodify.sh
+# echo =========== PATH ===========
+# echo "Change PATH, Press Enter to continue..."
+# read blaj
+# echo 'PATH=$PATH:"/usr/share/doc/python3-impacket/examples"' > /etc/profile.d/stewripathmodify.sh
+# echo "PATH=\"\$PATH:$HOME/tools\"" >> /etc/profile.d/stewripathmodify.sh
 
 echo =========== Powershell hjälp ===========
 echo "Install PS Help, Press Enter to continue..."
