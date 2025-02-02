@@ -37,3 +37,12 @@ $Params = @{
 
 New-HgsGuardian @Params
 ```
+
+In case of problem for Guest to get IP address,\
+disconnect it, and the reconecct it again
+```
+$VMName = 'MyVm'
+$SwitchName = (Get-VMNetworkAdapter -VMName $VMName).SwitchName
+Get-VMNetworkAdapter -VMName $VMName | Disconnect-VMNetworkAdapter
+Get-VMSwitch -Name $SwitchName | Connect-VMNetworkAdapter -VMName $VMName
+```
