@@ -80,6 +80,23 @@ Switch off Multicast/Broadcast Name Resolution
 		Note! Will not stop SSDP messages from Edge browser.
 ```
 
+Disable Incoming Firewall Rules
+```
+# Save Names
+Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
+Where-Object { $_.DisplayName -notlike "HNS Container Networking*" } | `
+Select-Object -ExpandProperty DisplayName | `
+Set-Content C:\Tools\DisabledInboundFirewallRules.txt
+
+# Disable Rules
+Get-Content -Path C:\Tools\DisabledInboundFirewallRules.txt | `
+ForEach-Object { Get-NetFirewallRule -DisplayName $_  | Set-NetFirewallRule -Enabled False}
+
+# In case they need to be enabled again
+Get-Content -Path C:\Tools\DisabledInboundFirewallRules.txt | `
+ForEach-Object { Get-NetFirewallRule -DisplayName $_  | Set-NetFirewallRule -Enabled True}
+```
+
 ## Clone (Golden) VM to Production VM
 ```
 # Use DA-HyperV for cloning
