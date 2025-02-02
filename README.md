@@ -82,9 +82,11 @@ Switch off Multicast/Broadcast Name Resolution
 
 ## Clone (Golden) VM to Production VM
 ```
-# Use DA-HyperV
+# Use DA-HyperV for cloning
 $GoldenVM = 'MyVm'
 Get-VM -Name $GoldenVM | Clone-XVM -NewVMName "$($$GoldenVM)-1"
+# Remove snapshots from Production VM
+Get-VMCheckpoint -VMName "$($$GoldenVM)-1" | Remove-VMCheckpoint
 ```
 
 
