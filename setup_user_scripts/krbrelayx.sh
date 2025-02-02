@@ -1,4 +1,4 @@
-echo =============== KrbRelay
+echo =============== KrbRelayx
 echo "KrbRelay, Press Enter to continue..."
 read blaj
 cd $HOME/venv
