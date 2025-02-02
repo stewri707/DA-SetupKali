@@ -40,7 +40,19 @@ $Params = @{
 New-HgsGuardian @Params
 ```
 
-In case of problem for Guest to get IP address,\
+Configure Host
+```
+$VMPath = "C:\Hyper-V\VM\"
+Configure-XVMHost -VmPath $VMPath
+```
+
+Import Exported VM
+```
+# Copy the exported VM from source Host to desired destination; Registering of imported VM will be "in-place" (From the place where the import is fron)
+Get-ChildItem -Path 'C:\Hyper-V\VM\*' -Include *.vmcx -Recurse | ForEach-Object { Import-VM -Path $_.FullName }
+```
+
+In case of problem for GuestVM to get IP address,\
 disconnect it, and the reconecct it again
 ```
 $VMName = 'MyVm'
@@ -67,4 +79,12 @@ Switch off Multicast/Broadcast Name Resolution
 		Set-Service SSDPSrv -StartupType Disabled # ('SSDP Discovery')
 		Note! Will not stop SSDP messages from Edge browser.
 ```
+
+## Clone (Golden) VM to Production VM
+```
+# Use DA-HyperV
+$GoldenVM = 'MyVm'
+Get-VM -Name $GoldenVM | Clone-XVM -NewVMName "$($$GoldenVM)-1"
+```
+
 
