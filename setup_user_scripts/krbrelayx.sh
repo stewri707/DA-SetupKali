@@ -1,5 +1,5 @@
 echo =============== KrbRelayx
-echo "KrbRelay, Press Enter to continue..."
+echo "KrbRelayx, Press Enter to continue..."
 read blaj
 cd $HOME/venv
 git clone https://github.com/dirkjanm/krbrelayx.git
