@@ -21,6 +21,8 @@ Get-ChildItem 'Cert:\LocalMachine\Shielded VM Local Certificates' | ForEach-Obje
 ```
 
 # Destination Host
+
+## Hyper-V
 For each exported HGS Certificate, create HGS
 ```
 $Password = Read-Host -AsSecureString -Prompt "PFX Password"
@@ -46,3 +48,23 @@ $SwitchName = (Get-VMNetworkAdapter -VMName $VMName).SwitchName
 Get-VMNetworkAdapter -VMName $VMName | Disconnect-VMNetworkAdapter
 Get-VMSwitch -Name $SwitchName | Connect-VMNetworkAdapter -VMName $VMName
 ```
+
+## Windows
+Switch off Multicast/Broadcast Name Resolution
+```
+# Deactivate NetBIOS with gpedit.msc
+		... / Administrative Templates > Network > DNS Client: Configure NetBIOS Settings
+
+# Deactivate LLMNR client with gpedit.msc
+		... / Administrative Templates > Network > DNS Client: Turn Off Multicast Name Resolution
+
+# Deactivate mDNS client via Service DNSCache
+		Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters\ -Name EnableMDNS -Value 0
+
+# Deactivate SSDP:
+		Disable relevant Services:
+		Set-Service UPNPHost -StartupType Disabled
+		Set-Service SSDPSrv -StartupType Disabled # ('SSDP Discovery')
+		Note! Will not stop SSDP messages from Edge browser.
+```
+`` 
