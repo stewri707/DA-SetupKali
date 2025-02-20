@@ -82,11 +82,18 @@ Switch off Multicast/Broadcast Name Resolution
 
 Disable Incoming Firewall Rules
 ```
-# Save Names
+# Save Names of rules to be disabled
+# Generic VM:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
 Where-Object { $_.DisplayName -notlike "HNS Container Networking*" } | `
 Select-Object -ExpandProperty DisplayName | `
 Set-Content C:\Tools\DisabledInboundFirewallRules.txt
+# VM to expose RDP:
+Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
+Where-Object { $_.DisplayName -notlike "HNS Container Networking*" -and  $_.DisplayName -notlike "RemoteDesktop-UserMode-In*" } | `
+Select-Object -ExpandProperty DisplayName | `
+Set-Content C:\Tools\DisabledInboundFirewallRules.txt
+
 
 # Disable Rules
 Get-Content -Path C:\Tools\DisabledInboundFirewallRules.txt | `
