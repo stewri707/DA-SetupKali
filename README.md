@@ -90,7 +90,7 @@ Select-Object -ExpandProperty DisplayName | `
 Set-Content C:\Tools\DisabledInboundFirewallRules.txt
 # VM to expose RDP:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
-Where-Object { $_.DisplayName -notlike "HNS Container Networking*" -and  $_.DisplayName -notlike "RemoteDesktop-UserMode-In*" } | `
+Where-Object { $_.DisplayName -notlike "HNS Container Networking*" -and  $_.DisplayName -notlike "Remote Desktop - User Mode*" } | `
 Select-Object -ExpandProperty DisplayName | `
 Set-Content C:\Tools\DisabledInboundFirewallRules.txt
 
