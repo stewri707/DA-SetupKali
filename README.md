@@ -11,13 +11,14 @@ find . -type f -name "*.sh" -exec chmod ug+x {} \;
 ```
 
 # Source Host
-Export all HGS Certificates
+Export all HGS Certificates, Elevated
 ```
 $Password = Read-Host -AsSecureString -Prompt "PFX Password"
+$ExportPath = 'd:\HSGCerts'
 
 # Created PFX filename(s) will be the same as certificate Subject Name
 Get-ChildItem 'Cert:\LocalMachine\Shielded VM Local Certificates' | ForEach-Object {
-    Export-PfxCertificate -Cert $_ -FilePath "c:\HGSCerts\$($_.Subject).pfx" -Password $Password
+    Export-PfxCertificate -Cert $_ -FilePath "${ExportPath}\$($_.Subject).pfx" -Password $Password
 }
 ```
 
