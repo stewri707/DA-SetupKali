@@ -11,10 +11,41 @@ find . -type f -name "*.sh" -exec chmod ug+x {} \;
 ```
 
 # Source Host
-Export all HGS Certificates, Elevated
+## Export only actively used HGS Certificates, Elevated
 ```
 $Password = Read-Host -AsSecureString -Prompt "PFX Password"
-$ExportPath = 'd:\HSGCerts'
+$ExportPath = 'E:\HSGCerts'
+$ExportDir = if ( -not (Test-Path -Path $ExportPath) ) { New-Item -Type Directory -Path $ExportPath }
+
+$HSGSigningCertName = "Shielded VM Signing Certificate (HsgGuardian For tmpvm) (${Env:COMPUTERNAME})"
+$HSGEncryptionCertName = "Shielded VM Encryption Certificate (HsgGuardian For tmpvm) (${Env:COMPUTERNAME})"
+
+$SampleVM = Get-VM -Name "W2k25-tmpl"
+$RawKeyProtector = Get-VMKeyProtector -VM $SampleVM
+$HSGKeyProtector = ConvertTo-HgsKeyProtector -Bytes $RawKeyProtector
+
+if ( $HSGKeyProtector.Guardians.HasPrivateSigningKey )
+{
+    $HSGSigningCertThumbPrint = $HSGKeyProtector.Guardians.SigningCertificate.Thumbprint
+    $HSGEncryptionCertThumbPrint = $HSGKeyProtector.Guardians.EncryptionCertificate.Thumbprint
+}
+else
+{
+    "Cannot find Local KeyProtector. Do not continue!" 
+}
+
+Get-Item -Path "Cert:\LocalMachine\Shielded VM Local Certificates\$HSGSigningCertThumbPrint" | `
+Export-PfxCertificate -FilePath "${ExportPath}\${HSGSigningCertName}.pfx" -Password $Password
+
+Get-Item -Path "Cert:\LocalMachine\Shielded VM Local Certificates\$HSGEncryptionCertThumbPrint" | `
+Export-PfxCertificate -FilePath "${ExportPath}\${HSGEncryptionCertName}.pfx" -Password $Password
+```
+
+## Export all HGS Certificates, Elevated
+```
+$Password = Read-Host -AsSecureString -Prompt "PFX Password"
+$ExportPath = 'E:\HSGCerts'
+if ( -not (Test-Path -Path $ExportPath) ) { New-Item -Type Directory -Path $ExportPath }
 
 # Created PFX filename(s) will be the same as certificate Subject Name
 Get-ChildItem 'Cert:\LocalMachine\Shielded VM Local Certificates' | ForEach-Object {
