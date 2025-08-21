@@ -58,19 +58,7 @@ Get-ChildItem 'Cert:\LocalMachine\Shielded VM Local Certificates' | ForEach-Obje
 ## Hyper-V
 For each exported HGS Certificate, create HGS
 ```
-$Password = Read-Host -AsSecureString -Prompt "PFX Password"
-
-$Params = @{
-    Name                          = $HGSDisplayName # Suggestion: Same as HGS Name as contained in PFX filename
-    SigningCertificate            = $PathToSignerCertPFX
-    SigningCertificatePassword    = $Password
-    EncryptionCertificate         = $PathToEnryptionCertPFX
-    EncryptionCertificatePassword = $Password
-    Allowexpired                  = $true
-    AllowUntrustedRoot            = $true
-}
-
-New-HgsGuardian @Params
+.\PS\Import-HGSCerts.ps1 -ImportPath E:\HGSCerts\
 ```
 
 Configure Host
