@@ -71,6 +71,10 @@ Import Exported VM
 ```
 # Copy the exported VM from source Host to desired destination; Registering of imported VM will be "in-place" (From the place where the import is fron)
 Get-ChildItem -Path 'C:\Hyper-V\VM\*' -Include *.vmcx -Recurse | ForEach-Object { Import-VM -Path $_.FullName }
+
+# Or, if the same exported VM is to be importible multiple times, it must be assiged an unique Id
+# The VM files will now be crfeated in their default locations
+Import-VM -Path "E:\ExportedVMs\Path-To-vmcx-File" -Copy -GenerateNewId
 ```
 
 In case of problem for GuestVM to get IP address,\
