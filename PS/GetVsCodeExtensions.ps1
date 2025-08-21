@@ -1,3 +1,6 @@
+# Program funkar ej!
+# Framräknad $URI leder till sida med felmeddelande
+
 param(
     $VsixDir = 'C:\Util\VSCodeExtension'
 )
