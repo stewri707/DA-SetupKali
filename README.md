@@ -14,7 +14,7 @@ find . -type f -name "*.sh" -exec chmod ug+x {} \;
 ## Export only actively used HGS Certificates, Elevated
 ```
 $Password = Read-Host -AsSecureString -Prompt "PFX Password"
-$ExportPath = 'E:\HSGCerts'
+$ExportPath = 'E:\HGSCerts'
 $ExportDir = if ( -not (Test-Path -Path $ExportPath) ) { New-Item -Type Directory -Path $ExportPath }
 
 $HSGSigningCertName = "Shielded VM Signing Certificate (HsgGuardian For tmpvm) (${Env:COMPUTERNAME})"
