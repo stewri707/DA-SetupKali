@@ -5,10 +5,10 @@ $ScriptDir/pywhisker.sh
 $ScriptDir/pkinittools
 $ScriptDir/modifyCertTemplate.sh
 $ScriptDir/bloodyAD.sh
-$ScriptDir/donpapi.sh
+# $ScriptDir/donpapi.sh errors out
 $ScriptDir/gmsadumper.sh
 $ScriptDir/krbrelayx.sh
 $ScriptDir/webclientServiceScanner.sh
 $ScriptDir/bloodhoundpy.sh
 $ScriptDir/powerview.sh
-$ScriptDir/ldaprelayscan.sh
+# $ScriptDir/ldaprelayscan.sh errors out
