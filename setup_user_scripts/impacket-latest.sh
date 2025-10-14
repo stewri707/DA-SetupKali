@@ -1,11 +1,10 @@
-echo ==================== Latest Impacket \(with PKCS12 support\)
-echo "Latest Impacket. Press Enter"
+echo ================== Impacket Master Branch
+echo "Impacket Master Branch, Press Enter to continue..."
 read blaj
 cd $HOME/venv
-git clone https://github.com/fortra/impacket.git
-python3 -m venv impacket
-. impacket/bin/activate 
-cd impacket
-pip3 install -r requirements.txt
-python3 setup.py install
+mkdir impacket-latest
+python3 -m venv impacket-latest
+. impacket-latest/bin/activate
+cd impacket-latest
+pip install impacket
 deactivate
