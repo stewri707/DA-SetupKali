@@ -1,4 +1,5 @@
 ScriptDir=setup_user_scripts
+$ScriptDir/road.sh
 $ScriptDir/tools.sh
 $ScriptDir/venv_dir.sh
 $ScriptDir/pywhisker.sh
