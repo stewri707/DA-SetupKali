@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ================ WebclientServiceScanner
 echo "WebclientServiceScanner, Press Enter to continue..."
 read blaj

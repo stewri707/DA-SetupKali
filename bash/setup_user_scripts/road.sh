@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ================== ROADrecon, Roadtx
 
 echo "ROADrecon, Press Enter to continue..."

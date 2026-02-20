@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ==================== GPOddity.py
 echo "GPOddity.py. Press Enter"
 read blaj

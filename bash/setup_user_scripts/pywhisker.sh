@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ==================== PyWhisker
 echo "PyWhisker, Press Enter to continue..."
 read blaj

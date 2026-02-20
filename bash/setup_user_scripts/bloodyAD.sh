@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ================== bloodyAD
 echo "bloodyAD, Press Enter to continue..."
 read blaj

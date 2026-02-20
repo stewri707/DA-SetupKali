@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ================ LdapRelayScan
 echo "LdapRelayScan, Press Enter to continue..."
 read blaj

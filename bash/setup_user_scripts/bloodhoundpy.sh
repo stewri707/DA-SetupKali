@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ==================== Bloodhoud.py Bloodhound CE Branch
 echo "Bloodhoud.py Bloodhound CE Branch. Press Enter"
 read blaj

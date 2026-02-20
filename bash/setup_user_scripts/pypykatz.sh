@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ============ PypyKatz
 echo "PypyKatz, Press Enter to continue..."
 read blaj

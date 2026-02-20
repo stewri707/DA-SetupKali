@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ========================== modifyCertTemplate
 echo "modifyCertTemplate, Press Enter to continue..."
 read blaj

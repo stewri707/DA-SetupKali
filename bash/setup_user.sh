@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ScriptDir=setup_user_scripts
 $ScriptDir/venv_dir.sh
 $ScriptDir/road.sh

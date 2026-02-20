@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo =============== Responder
 echo "Responder, Press Enter to continue..."
 read blaj

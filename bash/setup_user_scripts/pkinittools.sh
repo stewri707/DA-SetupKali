@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ==================== PKINITtools
 echo "PKInitTools, Press Enter to continue..."
 read blaj

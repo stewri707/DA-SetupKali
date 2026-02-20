@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo =============== KrbRelayx
 echo "KrbRelayx, Press Enter to continue..."
 read blaj

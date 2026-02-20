@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ================ DonPAPI
 echo "DonPAPI, Press Enter to continue..."
 read blaj

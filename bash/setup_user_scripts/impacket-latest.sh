@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ================== Impacket Master Branch
 echo "Impacket Master Branch, Press Enter to continue..."
 read blaj

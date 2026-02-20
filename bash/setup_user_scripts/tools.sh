@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ################ Tools
 echo "Install standalone tools, Press Enter to continue..."
 read blaj

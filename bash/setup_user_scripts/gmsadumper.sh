@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ============ gMSADumper
 echo "gMSADumper, Press Enter to continue..."
 read blaj

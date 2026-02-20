@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo ==================== Powerview.py
 echo "Powerview.py, Press Enter to continue..."
 read blaj
