@@ -1,7 +1,7 @@
 ScriptDir=setup_user_scripts
+$ScriptDir/venv_dir.sh
 $ScriptDir/road.sh
 $ScriptDir/tools.sh
-$ScriptDir/venv_dir.sh
 $ScriptDir/pywhisker.sh
 $ScriptDir/pkinittools
 $ScriptDir/modifyCertTemplate.sh
