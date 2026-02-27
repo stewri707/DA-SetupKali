@@ -14,4 +14,5 @@ $ScriptDir/krbrelayx.sh
 $ScriptDir/webclientServiceScanner.sh
 $ScriptDir/bloodhoundpy.sh
 $ScriptDir/powerview.sh
+$ScriptDir/passthecert.sh
 # $ScriptDir/ldaprelayscan.sh errors out
