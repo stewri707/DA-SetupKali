@@ -2,6 +2,7 @@
 
 ScriptDir=setup_user_scripts
 $ScriptDir/venv_dir.sh
+$ScriptDir/certipy.sh
 $ScriptDir/road.sh
 $ScriptDir/tools.sh
 $ScriptDir/pywhisker.sh
