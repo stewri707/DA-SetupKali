@@ -1,0 +1,24 @@
+
+# FZF configuration for bash. Start
+
+eval "$(fzf --bash)"
+
+# Bind normal Up arrow to fzf history search.
+bind -x '"\e[A": __fzf_history__'
+
+# Bind app mode Up arrow to fzf history search as a fallback.
+bind -x '"\eOA": __fzf_history__'
+
+# Bind normal Down arrow to native Bash history navigation.
+bind '"\e[B": next-history'
+
+# Bind app mode Down arrow to native Bash history navigation.
+bind '"\eOB": next-history'
+
+# Set default options for fzf.
+export FZF_DEFAULT_OPTS="
+--layout=reverse
+--info=inline
+"
+
+# FZF configuration for bash. End

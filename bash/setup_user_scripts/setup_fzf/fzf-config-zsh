@@ -1,0 +1,24 @@
+
+# FZF configuration for zsh. Start
+
+source <(fzf --zsh)
+
+# Bind normal Up arrow to fzf history search.
+bindkey '^[[A' fzf-history-widget
+
+# Bind app mode Up arrow to fzf history search as a fallback.
+bindkey '^[OA' fzf-history-widget
+
+# Bind normal Down arrow to native Zsh history navigation.
+bindkey '^[[B' down-line-or-history
+
+# Bind app mode Down arrow to native Zsh history navigation.
+bindkey '^[OB' down-line-or-history
+
+# Set default options for fzf.
+export FZF_DEFAULT_OPTS="
+--layout=reverse
+--info=inline
+"
+
+# FZF configuration for zsh. End
