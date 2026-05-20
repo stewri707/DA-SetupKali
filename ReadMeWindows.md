@@ -106,16 +106,28 @@ Switch off Multicast/Broadcast Name Resolution
 		Note! Will not stop SSDP messages from Edge browser.
 ```
 
+## Completely block incoming Traffic
+```
+# Get original config of Persistent Store
+Get-NetFirewallProfile -All -PolicyStore Persistentstore | select Name,DefaultInboundAction,AllowInboundRules
+
+# Configure Persistent Store
+Set-NetFirewallProfile -All -DefaultInboundAction Block -AllowInboundRules False
+```
+
+
 ## Disable Incoming Firewall Rules
 
 ```
 # Save Names of rules to be disabled
-# Generic VM:
+
+# Opt: Generic VM:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
 Where-Object { $_.DisplayName -notlike "HNS Container Networking*" } | `
 Select-Object -ExpandProperty DisplayName | `
 Set-Content C:\Tools\DisabledInboundFirewallRules.txt
-# VM to expose RDP:
+
+# Opt: VM to expose RDP:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
 Where-Object { $_.DisplayName -notlike "HNS Container Networking*" -and  $_.DisplayName -notlike "Remote Desktop - User Mode*" } | `
 Select-Object -ExpandProperty DisplayName | `
