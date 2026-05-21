@@ -1,7 +1,5 @@
 # Kali
 ```
-cd ~/DA-SetupKali/bash
-
 # As root
 sudo su -
 cd ~localuser/DA-SetupKali/bash
