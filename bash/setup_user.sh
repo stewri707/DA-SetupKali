@@ -6,17 +6,20 @@ $ScriptDir/certipy.sh
 $ScriptDir/road.sh
 $ScriptDir/tools.sh
 $ScriptDir/pywhisker.sh
-$ScriptDir/pkinittools
+$ScriptDir/pkinittools.sh
 $ScriptDir/modifyCertTemplate.sh
 $ScriptDir/bloodyAD.sh
-# $ScriptDir/donpapi.sh errors out
+$ScriptDir/donpapi.sh # errors out?
 $ScriptDir/gmsadumper.sh
+$ScriptDir/gpoddity.sh
+$ScriptDir/impacket-latest.sh
 $ScriptDir/krbrelayx.sh
 $ScriptDir/webclientServiceScanner.sh
 $ScriptDir/bloodhoundpy.sh
 $ScriptDir/powerview.sh
+$ScriptDir/pypykatz.sh
 $ScriptDir/passthecert.sh
-# $ScriptDir/ldaprelayscan.sh errors out
+$ScriptDir/ldaprelayscan.sh # errors out?
 
 # Setup fzf last as it modifies the shell configuration files
 FzfSetupDir=setup_fzf
