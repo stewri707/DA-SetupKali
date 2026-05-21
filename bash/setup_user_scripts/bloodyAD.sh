@@ -4,6 +4,7 @@ echo ================== bloodyAD
 echo "bloodyAD, Press Enter to continue..."
 read blaj
 cd $HOME/venv
+rm -rf bloodyAD
 mkdir bloodyAD
 python3 -m venv bloodyAD
 . bloodyAD/bin/activate

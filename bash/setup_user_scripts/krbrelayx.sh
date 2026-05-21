@@ -4,6 +4,7 @@ echo =============== KrbRelayx
 echo "KrbRelayx, Press Enter to continue..."
 read blaj
 cd $HOME/venv
+rm -rf krbrelayx
 git clone https://github.com/dirkjanm/krbrelayx.git
 python3 -m venv krbrelayx
 . krbrelayx/bin/activate

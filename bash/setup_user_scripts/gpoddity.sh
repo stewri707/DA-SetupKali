@@ -4,6 +4,7 @@ echo ==================== GPOddity.py
 echo "GPOddity.py. Press Enter"
 read blaj
 cd $HOME/venv
+rm -rf GPOddity
 git clone https://github.com/synacktiv/GPOddity
 python3 -m venv GPOddity
 .  GPOddity/bin/activate

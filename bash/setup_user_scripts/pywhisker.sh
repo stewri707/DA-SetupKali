@@ -4,6 +4,7 @@ echo ==================== PyWhisker
 echo "PyWhisker, Press Enter to continue..."
 read blaj
 cd $HOME/venv
+rm -rf pywhisker
 git clone https://github.com/ShutdownRepo/pywhisker.git
 python3 -m venv pywhisker
 . pywhisker/bin/activate

@@ -4,6 +4,7 @@ echo ================ LdapRelayScan
 echo "LdapRelayScan, Press Enter to continue..."
 read blaj
 cd $HOME/venv
+rm -rf LdapRelayScan ldaprelayscan
 git clone https://github.com/zyn3rgy/LdapRelayScan.git
 mv LdapRelayScan ldaprelayscan
 python3 -m venv ldaprelayscan

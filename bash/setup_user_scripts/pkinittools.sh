@@ -4,6 +4,7 @@ echo ==================== PKINITtools
 echo "PKInitTools, Press Enter to continue..."
 read blaj
 cd $HOME/venv
+rm -rf PKINITtools pkinittools
 git clone https://github.com/dirkjanm/PKINITtools.git
 mv PKINITtools pkinittools
 python3 -m venv pkinittools

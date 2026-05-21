@@ -4,6 +4,7 @@ echo ==================== Certipy ====================
 echo "Certipy, Press Enter to continue..."
 read blaj
 cd $HOME/venv
+rm -rf certipy
 mkdir certipy
 python3 -m venv certipy
 . certipy/bin/activate

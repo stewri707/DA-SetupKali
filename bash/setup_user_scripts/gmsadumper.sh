@@ -4,6 +4,7 @@ echo ============ gMSADumper
 echo "gMSADumper, Press Enter to continue..."
 read blaj
 cd $HOME/venv
+rm -rf gMSADumper gmsadumper
 git clone https://github.com/micahvandeusen/gMSADumper.git
 mv gMSADumper gmsadumper
 python3 -m venv gmsadumper

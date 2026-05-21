@@ -4,6 +4,7 @@ echo ================ WebclientServiceScanner
 echo "WebclientServiceScanner, Press Enter to continue..."
 read blaj
 cd $HOME/venv
+rm -rf WebclientServiceScanner webclientServiceScanner
 git clone https://github.com/Hackndo/WebclientServiceScanner.git
 mv WebclientServiceScanner webclientServiceScanner
 python3 -m venv webclientServiceScanner

@@ -2,6 +2,7 @@ echo ==================== Latest Impacket
 echo "Latest Impacket. Press Enter"
 read blaj
 cd $HOME/venv
+rm -rf impacket
 git clone https://github.com/fortra/impacket.git
 python3 -m venv impacket
 . impacket/bin/activate 
