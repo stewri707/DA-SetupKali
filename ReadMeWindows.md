@@ -112,33 +112,32 @@ Switch off Multicast/Broadcast Name Resolution
 Get-NetFirewallProfile -All -PolicyStore Persistentstore | select Name,DefaultInboundAction,AllowInboundRules
 
 # Configure Persistent Store
+# Will also stop rules in StaticServiceStore or ConfigurableServiceStore
 Set-NetFirewallProfile -All -DefaultInboundAction Block -AllowInboundRules False
 ```
 
 
 ## Disable Incoming Firewall Rules
 
+Disable all incoming rules in PersistentStore.  
+Will not touch StaticServiceStore or ConfigurableServiceStore
 ```
 # Save Names of rules to be disabled
 
-# Opt: Generic VM:
+# Opt: Generic VM, APF host:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
 Where-Object { $_.DisplayName -notlike "HNS Container Networking*" } | `
-Select-Object -ExpandProperty DisplayName | `
-Set-Content C:\Tools\DisabledInboundFirewallRules.txt
+Export-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml
 
 # Opt: VM to expose RDP:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
 Where-Object { $_.DisplayName -notlike "HNS Container Networking*" -and  $_.DisplayName -notlike "Remote Desktop - User Mode*" } | `
-Select-Object -ExpandProperty DisplayName | `
-Set-Content C:\Tools\DisabledInboundFirewallRules.txt
+Export-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml
 
 
 # Disable Rules
-Get-Content -Path C:\Tools\DisabledInboundFirewallRules.txt | `
-ForEach-Object { Get-NetFirewallRule -DisplayName $_  | Set-NetFirewallRule -Enabled False}
+Import-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml | Set-NetFirewallRule -Enabled False
 
 # In case they need to be enabled again
-Get-Content -Path C:\Tools\DisabledInboundFirewallRules.txt | `
-ForEach-Object { Get-NetFirewallRule -DisplayName $_  | Set-NetFirewallRule -Enabled True}
+Import-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml | Set-NetFirewallRule -Enabled True
 ```
