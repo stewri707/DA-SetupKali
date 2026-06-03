@@ -126,7 +126,7 @@ Will not touch StaticServiceStore or ConfigurableServiceStore
 
 # Opt: Generic VM, APF host:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
-Where-Object { $_.DisplayName -notlike "HNS Container Networking*" } | `
+Where-Object { $_.DisplayName -notlike "HNS Container Networking*" -and $_.Name -ne 'CoreNet-Diag-ICMP4-EchoRequest-In' } | `
 Export-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml
 
 # Opt: VM to expose RDP:
