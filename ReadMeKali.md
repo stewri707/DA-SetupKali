@@ -11,4 +11,10 @@ logout
 cd ~localuser/DA-SetupKali/bash
 ./setup_user.sh
 
+# Finally as root again if fzf is working correctly for localuser,
+# configure bash and zsh to use fzf
+# Check in setup_user.sh the correct path, but probably:
+~localuser/DA-SetupKali/bash/setup_user_scripts/setup_fzf/fzf.sh
+
 ```
+
