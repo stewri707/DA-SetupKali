@@ -106,17 +106,20 @@ Switch off Multicast/Broadcast Name Resolution
 		Note! Will not stop SSDP messages from Edge browser.
 ```
 
-## Completely block incoming Traffic
+## Alt. Completely block incoming Traffic
 ```
 # Get original config of Persistent Store
 Get-NetFirewallProfile -All -PolicyStore Persistentstore | select Name,DefaultInboundAction,AllowInboundRules
 
 # Configure Persistent Store
 Set-NetFirewallProfile -All -DefaultInboundAction Block -AllowInboundRules False
+# Note! This will block all incoming traffic, even that allowed in StaticServiceStore
+# and ConfigurableServiceStore.
+
 ```
 
 
-## Disable Incoming Firewall Rules
+## Alt. Disable Incoming Firewall Rules
 
 ```
 # Save Names of rules to be disabled
