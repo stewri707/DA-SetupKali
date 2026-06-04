@@ -3,9 +3,10 @@
 # As root
 sudo su -
 apt update
-cd ~localuser/DA-SetupKali
-git fetch
-git pull
+# Only if repo neds update
+cd ~localuser
+rm -rf DA-SetupKali
+git clone https://github.com/stewri707/DA-SetupKali.git
 
 cd ~localuser/DA-SetupKali/bash
 find . -type f -name "*.sh" -exec chmod ug+x {} \;
