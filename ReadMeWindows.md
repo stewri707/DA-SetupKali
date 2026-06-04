@@ -98,6 +98,7 @@ Switch off Multicast/Broadcast Name Resolution
 
 # Deactivate mDNS client via Service DNSCache
 		Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters\ -Name EnableMDNS -Value 0
+		# Alternative: GPO: ... / Administrative Templates > Network > DNS Client: Configure Multicast
 
 # Deactivate SSDP:
 		Disable relevant Services:
