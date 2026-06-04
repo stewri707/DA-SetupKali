@@ -127,20 +127,22 @@ Will not touch StaticServiceStore or ConfigurableServiceStore
 ```
 # Save Names of rules to be disabled
 
+$ExportFilePath = "C:\jobb\DisabledInboundFirewallRules - $(Get-Date -Format "yyMMdd-HH-mm").xml"
+
 # Opt: Generic VM, APF host:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
 Where-Object { $_.DisplayName -notlike "HNS Container Networking*" -and $_.Name -ne 'CoreNet-Diag-ICMP4-EchoRequest-In' } | `
-Export-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml
+Export-Clixml -Path $ExportFilePath
 
 # Opt: VM to expose RDP:
 Get-NetFirewallRule -Direction Inbound -Action Allow -Enabled True | `
 Where-Object { $_.DisplayName -notlike "HNS Container Networking*" -and  $_.DisplayName -notlike "Remote Desktop - User Mode*" } | `
-Export-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml
+Export-Clixml -Path $ExportFilePath
 
 
 # Disable Rules
-Import-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml | Set-NetFirewallRule -Enabled False
+Import-Clixml -Path $ExportFilePath | Set-NetFirewallRule -Enabled False
 
 # In case they need to be enabled again
-Import-Clixml -Path C:\slask\DisabledInboundFirewallRules.xml | Set-NetFirewallRule -Enabled True
+Import-Clixml -Path $ExportFilePath | Set-NetFirewallRule -Enabled True
 ```
